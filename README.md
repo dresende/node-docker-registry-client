@@ -1,4 +1,4 @@
-# node-docker-registry-client
+# node-docker-registry-client [EXTENDED]
 
 A Docker Registry API client for node.js.
 
@@ -15,7 +15,7 @@ and general documentation at the main
 
 ## Install
 
-    npm install docker-registry-client
+    npm install docker-registry-client-extended
 
 
 ## Overview
@@ -99,7 +99,7 @@ If a scheme isn't given, then "https" is assumed.
 If you know, for example, that you are only dealing with a v2 Docker Registry,
 then simple usage will look like this:
 
-    var drc = require('docker-registry-client');
+    var drc = require('docker-registry-client-extended');
     var REPO = 'alpine';
     var client = drc.createClientV2({name: REPO});
 
@@ -118,7 +118,7 @@ then simple usage will look like this:
 A more complete example (showing logging, auth, etc.):
 
     var bunyan = require('bunyan');
-    var drc = require('docker-registry-client');
+    var drc = require('docker-registry-client-extended');
 
     // This package uses https://github.com/trentm/node-bunyan for logging.
     var log = bunyan.createLogger({
@@ -144,7 +144,7 @@ A more complete example (showing logging, auth, etc.):
 This package also supports the nominal technique for pinging the registry
 to see if it supports v2, otherwise falling back to v1:
 
-    var drc = require('docker-registry-client');
+    var drc = require('docker-registry-client-extended');
 
     var REPO = 'alpine';
     drc.createClient({name: REPO, /* ... */}, function (err, client) {
